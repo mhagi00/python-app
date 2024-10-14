@@ -1,0 +1,26 @@
+mysql:
+  replicaCount: 1
+  image:
+    repository: mysql/mysql-server
+    tag: "5.7"
+  rootPassword: "password123"
+  resources:
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+    requests:
+      memory: "256Mi"
+      cpu: "250m"
+
+pythonApp:
+  replicaCount: 2
+  image:
+    repository: "mhagi/python-app"
+    tag: "latest"
+  resources:
+    limits:
+      memory: "256Mi"
+      cpu: "500m"
+    requests:
+      memory: "128Mi"
+      cpu: "250m"
